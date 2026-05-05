@@ -276,3 +276,25 @@ elif month in [9, 10, 11]:
     print("Season: Autumn")
 else:
     print("Invalid month number.")
+
+# Create an signup form . First and lastname must be in alphabet and cannot . Email must contain @ and . . Force user to enter email again . Password msut be greater than 8 character.
+
+first_name=input('Enter Your first name')
+last_name=input('Enter Your first name')
+form_email=input('Enter your email')
+remail=input('Enter email again')
+form_password = input('Enter your password')
+if not first_name.isalpha() and first_name == '':
+    print('You must enter your name in alphabet')
+elif not last_name.isalpha() and not last_name != '':
+    print('You must enter your name in alphabet')
+elif not '@' in form_email and not '.' in form_email:
+    print('Invalid email')
+elif not remail== form_email:
+    print('Email must match with email')
+elif len(form_password) < 8:
+    print('Pass word must be atleast 8 character')
+else:
+    print(f'Welcome ${first_name} ${last_name} . Your email is ${form_email}')
+
+
