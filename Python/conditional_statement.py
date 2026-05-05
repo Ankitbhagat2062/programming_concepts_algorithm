@@ -297,4 +297,84 @@ elif len(form_password) < 8:
 else:
     print(f'Welcome ${first_name} ${last_name} . Your email is ${form_email}')
 
+# Q1. A theme park has these rules. You can ride the roller coaster if you are at least 12 years old AND at least 140 cm tall.
+#  Write the if-else code for this
+if age >= 12 and height >= 140:
+    print("You can ride the roller coaster.")
+else:
+    print("You do not meet the requirements.")
 
+
+# Q2. Design a Traffic Light System. Given a variable light that can be "red", "yellow", or "green", print the correct 
+# instruction. Also handle an invalid color with an error message
+light = "green"  # Example input
+
+if light == "red":
+    print("Stop")
+elif light == "yellow":
+    print("Slow down")
+elif light == "green":
+    print("Go")
+else:
+    print("Error: Invalid color")
+
+# Q3. Write a match statement that takes a number 1-4 and prints the corresponding season: 1=spring, 2=summer, 3-autumn, 
+# 4-winter. Default "unknown"
+month_num = 2  # Example input
+
+match month_num:
+    case 1: print("spring")
+    case 2: print("summer")
+    case 3: print("autumn")
+    case 4: print("winter")
+    case _: print("unknown")
+
+# Q4 Write a login system using nested if Check
+# If username equals "admin"
+# Inside that, if password equals "pass123"
+# Print appropriate messages for valid login, wrong password, wrong username
+username = input("Username: ")
+password = input("Password: ")
+
+if username == "admin":
+    if password == "pass123":
+        print("Login successful")
+    else:
+        print("Wrong password")
+else:
+    print("Wrong username")
+
+# Q5 Design a Bank Loan Approval System. Approve a loan only if ALL three conditions are met
+# Age is between 21 and 60 (inclusive)
+# Monthly income is at least 30,000
+# Credit score is at least 700
+# If not approved, print which condition failed. If multiple fail, pick the most important one to report
+income = float(input("Enter your monthly income: "))
+age = int(input("Enter your age: "))
+credit_score = int(input("Enter your credit score: "))
+if not (21 <= age <= 60):
+    print("Loan Denied: Age must be between 21 and 60.")
+elif income < 30000:
+    print("Loan Denied: Monthly income too low.")
+elif credit_score < 700:
+    print("Loan Denied: Credit score too low.")
+else:
+    print("Loan Approved!")
+
+# Q6. You are developing a simple ticket booking system for a movie theatre. The ticket price depends on the age of the person 
+# and whether they have a membership card. If the person is under 12 the ticket is free. If the person is between 12 and 60: 
+# If they have a membership card, the ticket costs $150. If they do not have a membership card, the ticket costs $200. 
+# If the person is over 60, the ticket costs $100 regardless of membership as senior citizenship discount. Write the nested if-else 
+# code to determine the ticket price based on user input for age and membership status.
+age = int(input("Enter your age: "))
+has_membership = input("Do you have a membership? (yes/no): ").lower()
+if age < 12:
+    price = 0
+elif 12 <= age <= 60:
+    if has_membership:
+        price = 150  # Example discounted price
+    else:
+        price = 200  # Example standard price
+else:
+    price = 100  # Example senior price
+print(f"The ticket price is ${price}.")
