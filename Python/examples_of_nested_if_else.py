@@ -154,3 +154,13 @@ elif num % 5 == 0:
     print("Buzz")
 else:
     print(num)
+
+# Q11 Write an python program to create rock paper and scissor game.
+p1=input('Enter Your turn . Rock , Paper and Scissor for r ,p , s respectively').lower()
+p2=input('Enter Your turn . Rock , Paper and Scissor for r ,p , s respectively').lower()
+if (p1 == 'r' and p2 == 's') | (p1 == 'p' and p2 == 'r') | (p1 == 's' and p2 == 'p'):
+    print('Player 1 wins the game') 
+elif (p1 == 'r' and p2 == 'p') |(p1 == 'p' and p2 == 's') | (p1 == 's' and p2 == 'r'):
+    print('player 2 wins the game')
+else:
+    print('Invalid input :You must type r,s or p')
