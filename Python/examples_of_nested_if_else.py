@@ -156,11 +156,34 @@ else:
     print(num)
 
 # Q11 Write an python program to create rock paper and scissor game.
-p1=input('Enter Your turn . Rock , Paper and Scissor for r ,p , s respectively').lower()
-p2=input('Enter Your turn . Rock , Paper and Scissor for r ,p , s respectively').lower()
-if (p1 == 'r' and p2 == 's') | (p1 == 'p' and p2 == 'r') | (p1 == 's' and p2 == 'p'):
-    print('Player 1 wins the game') 
-elif (p1 == 'r' and p2 == 'p') |(p1 == 'p' and p2 == 's') | (p1 == 's' and p2 == 'r'):
-    print('player 2 wins the game')
+p1 = input('Enter Player 1 turn . Rock , Paper and Scissor for r ,p , s respectively: ').lower()
+p2 = input('Enter Player 2 turn . Rock , Paper and Scissor for r ,p , s respectively: ').lower()
+
+valid = {'r', 'p', 's'}
+if p1 not in valid or p2 not in valid:
+    print('Invalid input : You must type r, p or s')
+elif p1 == p2:
+    print("It's a draw")
+elif (p1 == 'r' and p2 == 's') or (p1 == 'p' and p2 == 'r') or (p1 == 's' and p2 == 'p'):
+    print('Player 1 wins the game')
 else:
-    print('Invalid input :You must type r,s or p')
+    print('Player 2 wins the game')
+
+
+# Q12. Write a python program for ATM machine.Ask use the pin if it does not match with pin then print wrong pin.
+#  The program should ask user to enter the amount to withdraw.  If the amount is greater than the balance, print 
+# "Insufficient funds".If the amount is less than or equal to the balance,  print "Please collect your cash" and update 
+# the balance accordingly.
+correct_pin = "1234"  # Example correct PIN
+balance = 1000.0  # Example initial balance
+entered_pin = input("Enter your PIN: ")
+if entered_pin == correct_pin:
+    amount = float(input("Enter the amount to withdraw: "))
+    if amount > balance:
+        print("Insufficient funds")
+    else:
+        balance -= amount
+        print("Please collect your cash")
+        print(f"Remaining balance: ${balance:.2f}")
+else:
+    print("Wrong PIN")
