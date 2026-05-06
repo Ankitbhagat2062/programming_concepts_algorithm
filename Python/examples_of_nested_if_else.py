@@ -170,20 +170,34 @@ else:
     print('Player 2 wins the game')
 
 
-# Q12. Write a python program for ATM machine.Ask use the pin if it does not match with pin then print wrong pin.
+# Q12. Write a python program for ATM machine.Ask user the pin if it does not match with pin then print wrong pin.
+# Ask user wheck they check / withdraw /exit for 1,2,3 Respectively .If they want to withdraw then check the balance and 
+# if they have sufficient balance then allow them to withdraw otherwise print insufficient fund. If they want to check balance
+#  then print the balance. If they want to exit then print thank you for using ATM.
 #  The program should ask user to enter the amount to withdraw.  If the amount is greater than the balance, print 
 # "Insufficient funds".If the amount is less than or equal to the balance,  print "Please collect your cash" and update 
 # the balance accordingly.
 correct_pin = "1234"  # Example correct PIN
 balance = 1000.0  # Example initial balance
 entered_pin = input("Enter your PIN: ")
-if entered_pin == correct_pin:
-    amount = float(input("Enter the amount to withdraw: "))
-    if amount > balance:
-        print("Insufficient funds")
-    else:
-        balance -= amount
-        print("Please collect your cash")
-        print(f"Remaining balance: ${balance:.2f}")
-else:
+if entered_pin != correct_pin:
     print("Wrong PIN")
+else:
+    print("1. Check Balance")
+    print("2. Withdraw")
+    print("3. Exit")
+    choice = input("Enter your choice (1/2/3): ")
+    if choice == '1':
+        print(f"Your balance is: ${balance:.2f}")
+    elif choice == '2':
+        amount = float(input("Enter the amount to withdraw: "))
+        if amount > balance:
+            print("Insufficient funds")
+        else:
+            balance -= amount
+            print("Please collect your cash")
+            print(f"Your new balance is: ${balance:.2f}")
+    elif choice == '3':
+        print("Thank you for using ATM.")
+    else:
+        print("Invalid choice")
