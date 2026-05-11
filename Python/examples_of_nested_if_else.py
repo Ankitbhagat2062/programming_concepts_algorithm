@@ -156,18 +156,34 @@ else:
     print(num)
 
 # Q11 Write an python program to create rock paper and scissor game.
-p1 = input('Enter Player 1 turn . Rock , Paper and Scissor for r ,p , s respectively: ').lower()
-p2 = input('Enter Player 2 turn . Rock , Paper and Scissor for r ,p , s respectively: ').lower()
-
-valid = {'r', 'p', 's'}
-if p1 not in valid or p2 not in valid:
-    print('Invalid input : You must type r, p or s')
-elif p1 == p2:
-    print("It's a draw")
-elif (p1 == 'r' and p2 == 's') or (p1 == 'p' and p2 == 'r') or (p1 == 's' and p2 == 'p'):
-    print('Player 1 wins the game')
-else:
-    print('Player 2 wins the game')
+ask=input('Do you want to play with computer or with player .Type 1 for computer and 2 for player: ').lower()
+if ask not in ['1', '2']:
+    print('Invalid input : You must type 1 or 2')
+elif ask == '1':
+    import random
+    choices = ['r', 'p', 's']
+    computer_choice = random.choice(choices)
+    player_choice = input('Enter your turn . Rock , Paper and Scissor for r ,p , s respectively: ').lower()
+    if player_choice not in choices:
+        print('Invalid input : You must type r, p or s')
+    elif player_choice == computer_choice:
+        print("It's a draw")
+    elif (player_choice == 'r' and computer_choice == 's') or (player_choice == 'p' and computer_choice == 'r') or (player_choice == 's' and computer_choice == 'p'):
+        print('You win the game')
+    else:
+        print('Computer wins the game')
+elif ask == '2':
+    p1 = input('Enter Player 1 turn . Rock , Paper and Scissor for r ,p , s respectively: ').lower()
+    p2 = input('Enter Player 2 turn . Rock , Paper and Scissor for r ,p , s respectively: ').lower()
+    valid = {'r', 'p', 's'}
+    if p1 not in valid or p2 not in valid:
+        print('Invalid input : You must type r, p or s')
+    elif p1 == p2:
+        print("It's a draw")
+    elif (p1 == 'r' and p2 == 's') or (p1 == 'p' and p2 == 'r') or (p1 == 's' and p2 == 'p'):
+        print('Player 1 wins the game')
+    else:
+        print('Player 2 wins the game')
 
 
 # Q12. Write a python program for ATM machine.Ask user the pin if it does not match with pin then print wrong pin.
@@ -201,3 +217,16 @@ else:
         print("Thank you for using ATM.")
     else:
         print("Invalid choice")
+
+# Q13 Write a python program for lift.
+floor=int(input('Enter the floor number you want to go: '))
+weight = int(input('Enter your weight in kg: '))
+isDoorClosed = input('Is the door closed? (yes/no): ').lower() == 'yes'
+if  0 >= floor >= 10 and floor <= 0:
+   print('Invalid floor number : You must enter a number between 0 and 10')
+elif floor > 500:
+    print('Overweight : The lift cannot operate for weight above 500 kg')
+elif isDoorClosed:
+    print('Door is closed : Please close the door to operate the lift')
+else:    
+    print(f'Lift is moving to floor {floor}')
