@@ -119,7 +119,7 @@ for ch in phone_num:
 # print(f'{blood_group_var.center(30)}: {blood_group}')
 
 # find and index and rfind and rindex
-text = "programming. python"
+# text = "programming. python"
 # print(text.find('p'))  # 3
 # print(text.index('p'))  # 3
 # print(text.rfind('p'))  # 3
@@ -127,7 +127,7 @@ text = "programming. python"
 
 # print(text.find('p') - len(text))  # negative index of p
 
-number = '\t123 456'
+# number = '\t123 456'
 # print(number.isdigit())  # True
 # print(number.isalpha())  # False
 # print(number.isalnum())  # True
@@ -135,8 +135,8 @@ number = '\t123 456'
 # print(number.isnumeric())  # True
 # print(number.isprintable())  # True
 # print(number.isspace())  # False
-a=10
-b=20
+# a=10
+# b=20
 # print(f'{10*b}')
 # print('{}{c}{}'.format(b,c=10,a))// error
 # print('{0} {1} {c}'.format(b,a,c=10))
@@ -180,14 +180,14 @@ b=20
 # Write a python program that calculates and displays the totalstay cost , discount amount , and final amount to be paid after
 #  discount .Format all amounts in 2 decimal places .
 
-one_night_charge=1200.08
-totaldays=7
-discount_percent=18
+# one_night_charge=1200.08
+# totaldays=7
+# discount_percent=18
 
-Total_Stay_Cost=one_night_charge*totaldays
+# Total_Stay_Cost=one_night_charge*totaldays
 
-discount_amount=discount_percent/100*Total_Stay_Cost
-final_amount=Total_Stay_Cost-discount_amount 
+# discount_amount=discount_percent/100*Total_Stay_Cost
+# final_amount=Total_Stay_Cost-discount_amount 
 # print(2 and 3 or 2 and 4)  # (2 & 3) = 2 (binary 10 & 11 = 10), (2 & 4) = 0 (10 & 100 = 000), 2 or 0 = 2
 
 # 1. Check if a username is not empty and the age is greater than or equal to 18.
@@ -228,19 +228,5 @@ final_amount=Total_Stay_Cost-discount_amount
 #     print("Username must contain special charcter like _ and . It must not contain spaces")
 # Bitwise NOT (~) of 1:
 # Python uses two's complement representation for integers (32-bit or 64-bit)
-# 
-# Step 1: Convert 1 to binary (32-bit two's complement)
-#         1 = 00000000000000000000000000000001
-#
-# Step 2: Apply Bitwise NOT - flip ALL bits (0→1, 1→0)
-#         ~1 = 11111111111111111111111111111110
-#
-# Step 3: Interpret the result as two's complement signed integer
-#         Since the leftmost bit is 1, this is a NEGATIVE number
-#         To find the negative value:
-#         - Flip all bits back: 11111111111111111111111111111110 → 00000000000000000000000000000001
-#         - Add 1: 00000000000000000000000000000001 + 1 = 00000000000000000000000000000010 (which is 2)
-#         - Result is -(2) = -2
-#
-# Formula: ~a = -(a + 1)
-# Calculation: ~1 = -(1 + 1) = -2
+
+
